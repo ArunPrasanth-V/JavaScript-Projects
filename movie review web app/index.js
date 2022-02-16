@@ -1,5 +1,4 @@
 const autocompleteconfig={
-
   renderOpeation(movie){
     const imgSrc=(movie.Poster ==='N/A')?'':movie.Poster;
    
@@ -30,7 +29,6 @@ autocomplete({
     onOptionSelect(movie){
       document.querySelector('.tutorial').classList.add('is-hidden');
       onMovieSelect(movie,document.querySelector('#left-summary'));
-    
     } 
 });
 autocomplete({
