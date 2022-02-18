@@ -1,10 +1,9 @@
 const autocompleteconfig={
   renderOpeation(movie){
     const imgSrc=(movie.Poster ==='N/A')?'':movie.Poster;
-   
    return  `
     <img src="${imgSrc}"/>
-    ${movie.Title} (${movie.Year})`;
+    ${movie. Title} (${movie. Year})`;
 },
 inputValue(movie){
  return movie.Title;
@@ -19,24 +18,24 @@ async fetchData(searchTerm){
    if(response.data.Error){
        return [];
    }
-  return response.data.Search; 
+  return response. data.Search; 
 }
 }
 
 autocomplete({
     ...autocompleteconfig,
-    root:document.querySelector('#left-autocomplete')  ,
+    root:document.querySelector('#left-autocomplete'),
     onOptionSelect(movie){
       document.querySelector('.tutorial').classList.add('is-hidden');
-      onMovieSelect(movie,document.querySelector('#left-summary'));
+      onMovieSelect(movie, document.querySelector('#left-summary'));
     } 
 });
 autocomplete({
   ...autocompleteconfig,
-  root:document.querySelector('#right-autocomplete')  ,
+  root:document.querySelector('#right-autocomplete'),
   onOptionSelect(movie){
     document.querySelector('.tutorial').classList.add('is-hidden');
-    onMovieSelect(movie,document.querySelector('#right-summary'));
+    onMovieSelect(movie, document.querySelector('#right-summary'));
     
   }
    
